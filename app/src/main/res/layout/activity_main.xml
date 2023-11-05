@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:weightSum="3">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:gravity="center"
+        android:layout_weight="1"
+        >
+
+        <ImageView
+            android:layout_marginTop="50dp"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/logo"
+            />
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:layout_weight="1">
+
+        <EditText
+            android:layout_width="220dp"
+            android:layout_height="60dp"
+            android:hint="Email"
+            android:id="@+id/emailLoginEt"
+            android:maxLines="1"
+            android:textSize="16dp"
+            android:layout_marginTop="20dp"/>
+
+        <EditText
+            android:layout_width="220dp"
+            android:layout_height="60dp"
+            android:hint="Password"
+            android:id="@+id/passwordLoginEt"
+            android:maxLines="1"
+            android:textSize="16dp"
+            android:layout_marginTop="10dp"
+            android:inputType="textPassword"/>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="25dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="New? 1 Step And U Are In!"
+                android:paddingRight="10dp"
+                android:textSize="10dp"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Register"
+                android:textSize="13dp"
+                android:textFontWeight="600"
+                android:padding="0dp"
+                android:layout_margin="0dp"
+                android:backgroundTint="@android:color/transparent"
+                android:textColor="@color/dark_blue"
+                style="?android:attr/borderlessButtonStyle"
+                android:minHeight="0dp"
+                android:minWidth="0dp"
+                android:id="@+id/navRegisterBtn" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:gravity="center_horizontal"
+        android:layout_weight="1">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/cool_button"
+            android:id="@+id/rollInBtnLogin"
+            android:text="Roll In"
+            android:paddingHorizontal="28dp"
+            android:paddingVertical="0dp"
+            android:textSize="22dp"
+            android:textFontWeight="600"
+            android:fontFamily="@font/inter_500"
+            android:layout_marginTop="20dp"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>

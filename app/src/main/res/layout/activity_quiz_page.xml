@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    tools:context=".QuizPage">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Destination"
+        android:id="@+id/quizTitleTv"
+        android:textColor="@color/dark_blue"
+        android:textSize="40dp"
+        android:layout_marginTop="30dp"
+        android:textAlignment="center"
+        />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Which city, country, or specific location do you want to visit?"
+        android:id="@+id/quizQuestionTv"
+        android:textColor="@color/dark_blue"
+        android:textSize="20dp"
+        android:width="300dp"
+        android:layout_marginTop="120dp"
+        />
+
+    <EditText
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:textSize="17dp"
+        android:layout_marginTop="30dp"
+        android:id="@+id/quizInputEt"
+        />
+
+    <Button
+        android:id="@+id/submitQuestionBtn"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Submit" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/earth"
+        android:layout_marginTop="150dp"
+        />
+
+
+</LinearLayout>

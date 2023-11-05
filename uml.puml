@@ -1,0 +1,151 @@
+@startuml
+class com.example.trip.MainActivity {
+~ Button navRegisterBtn
+~ EditText emailLoginEt
+- FirebaseAuth mAuth
+# void onCreate(Bundle)
++ void onClick(View)
++ void login(String,String)
+}
+class com.example.trip.QuizPage {
+~ int questionsNum
+~ LinkedHashMap<String,String> quizTitlesAndQuestions
+~ List<String> quizTitles
+~ List<String> quizQuestions
+~ Button submitQuestionBtn
+~ TextView quizTitleTv
+~ EditText quizInputEt
+~ TripData tripDataSingelton
+~ Vibrator v
+# void onCreate(Bundle)
++ void onClick(View)
+}
+class com.example.trip.TripPlanRequestManager {
+- {static} String TAG
+- String url
+- OnTripPlanResponseListener responseListener
++ <<Create>> TripPlanRequestManager(String,OnTripPlanResponseListener)
+# String doInBackground(Void)
+# void onPostExecute(String)
+}
+interface com.example.trip.TripPlanRequestManager$OnTripPlanResponseListener {
+~ void onTripPlanResponse(String)
+~ void onTripPlanError(String)
+}
+class com.example.trip.TripData {
+- {static} TripData instance
++ {static} HashMap<String,String> tripDataHashMap
+- <<Create>> TripData()
++ {static} TripData getInstance()
++ void addAnswer(String,String)
++ String getAnswer(String)
+}
+class com.example.trip.MusicPlayerService {
+- MediaPlayer mediaPlayer
++ void onCreate()
++ int onStartCommand(Intent,int,int)
++ void onDestroy()
++ IBinder onBind(Intent)
+}
+class com.example.trip.PDFCreator {
++ {static} void createPdf(String,String)
+}
+class com.example.trip.WaitingQuiz {
+~ TextView waitingQuizQuestionTv
+~ WaitingQuizQuestion[] waitingQuizQuestions
+~ Random random
+~ RadioButton answer1
+~ RadioButton[] answers
+~ RadioGroup answersGroup
+~ WaitingQuizQuestion currentQuestion
+# void onCreate(Bundle)
++ WaitingQuizQuestion[] getAllQuestions()
++ WaitingQuizQuestion getNextQuestion()
++ void onCheckedChanged(RadioGroup,int)
++ void updateScreen()
+}
+class com.example.trip.TripPlanData {
+- {static} TripPlanData instance
+- {static} Map<String,Object> planHashMap
+- <<Create>> TripPlanData()
++ {static} TripPlanData getInstance()
++ Map<String,Object> getHashMap()
++ void setHashMap(Map<String,Object>)
++ void add(String,Object)
++ Object get(Object)
++ Map getDays()
+}
+class com.example.trip.WaitingQuizQuestion {
+- String question
+- String answer
+- String[] options
+- boolean askedBefore
++ <<Create>> WaitingQuizQuestion(String,String[],String)
++ String getQuestion()
++ void setQuestion(String)
++ String getAnswer()
++ void setAnswer(String)
++ String[] getOptions()
++ void setOptions(String[])
++ boolean IsAskedBefore()
++ String[] getMixedOptions()
++ void setAskedBefore(boolean)
+}
+class com.example.trip.URL {
+- {static} String baseUrl
++ {static} String getFullUrl()
+}
+class com.example.trip.ShowPlan {
+~ LinearLayout showTripLayout
+~ ImageButton showPlanMenu
+~ Dialog menuDialog
+~ TripPlanData tripPlanData
+~ TextView dayTitleTv
+~ Button allTripBtn
+~ FirebaseAuth mAuth
+# void onCreate(Bundle)
++ void onClick(View)
+- void createMenuDialog()
+- void savePdfUrlAndTripNameToDatabase(String,String)
++ void savePDF(String)
+}
+class com.example.trip.Register {
+- FirebaseAuth mAuth
+~ EditText emailEt
+~ Button registerBtn
+# void onCreate(Bundle)
++ void onClick(View)
++ void CreateUser(String,String)
+}
+class com.example.trip.AuthInputHandler {
++ {static} boolean isEmailValid(String)
++ {static} boolean isPasswordValid(String)
+}
+class com.example.trip.Profile {
+~ Button planTripBtn
+~ FirebaseAuth mAuth
+~ LinearLayout scrollViewLayout
+# void onCreate(Bundle)
++ void onClick(View)
+- void getTripNamesByUserId(String)
++ void createTripLinear(String,String)
+- void downloadPDF(String,String)
+}
+
+
+com.example.trip.OnClickListener <|.. com.example.trip.MainActivity
+androidx.appcompat.app.AppCompatActivity <|-- com.example.trip.MainActivity
+com.example.trip.OnClickListener <|.. com.example.trip.QuizPage
+androidx.appcompat.app.AppCompatActivity <|-- com.example.trip.QuizPage
+android.os.AsyncTask <|-- com.example.trip.TripPlanRequestManager
+com.example.trip.TripPlanRequestManager +.. com.example.trip.TripPlanRequestManager$OnTripPlanResponseListener
+android.app.Service <|-- com.example.trip.MusicPlayerService
+com.example.trip.OnCheckedChangeListener <|.. com.example.trip.WaitingQuiz
+androidx.appcompat.app.AppCompatActivity <|-- com.example.trip.WaitingQuiz
+com.example.trip.OnClickListener <|.. com.example.trip.ShowPlan
+androidx.appcompat.app.AppCompatActivity <|-- com.example.trip.ShowPlan
+com.example.trip.OnClickListener <|.. com.example.trip.Register
+androidx.appcompat.app.AppCompatActivity <|-- com.example.trip.Register
+com.example.trip.OnClickListener <|.. com.example.trip.Profile
+androidx.appcompat.app.AppCompatActivity <|-- com.example.trip.Profile
+@enduml
