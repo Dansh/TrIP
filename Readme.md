@@ -3,9 +3,10 @@
 <strong>Start Planning your trips with ChatGPT </strong> <br/>
 <br/>
 
-<img src="https://i.ibb.co/5Gr8DZ5/Whats-App-Image-2023-06-16-at-00-12-54-9dc3ee63-1-1-removebg-preview.png" alt="Whats-App-Image-2023-06-16-at-00-12-54-9dc3ee63-1-1-removebg-preview" border="0"></a><br /><a target='_blank' href='https://imgbb.com/'><br />
+<img src="https://i.ibb.co/5Gr8DZ5/Whats-App-Image-2023-06-16-at-00-12-54-9dc3ee63-1-1-removebg-preview.png" alt="Whats-App-Image-2023-06-16-at-00-12-54-9dc3ee63-1-1-removebg-preview" border="0"></a><br /><br />
 <br/>
-A comprehensive review of the project (Hebrew):<br/>
+A comprehensive review of the project (Hebrew):
+<br/>
 https://docs.google.com/document/d/1uJUA9mpGzAgueZO9oMp1V5PNblD7bJfOiNLjPsDNkQA/edit?usp=sharing
 
 <br/>
